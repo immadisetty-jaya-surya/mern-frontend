@@ -1,0 +1,10 @@
+/* @font-face {
+    font-family: 'Inter';
+    src: url(/frontend/src/assets/Inter/Inter-VariableFont_slnt\,wght.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+body{
+    font-family: 'Inter',sans-serif;
+}
