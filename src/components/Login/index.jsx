@@ -16,7 +16,7 @@ const Login = () => {
       console.log('Login response:',res.data)
       return res.data
     } catch (error) {
-      console.log('error:',error);
+      // console.log('error:',error);
       console.log('Error:',error.response.data);
     }
   }

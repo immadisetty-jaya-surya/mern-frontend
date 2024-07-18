@@ -16,11 +16,14 @@ const ProtectedRoute = ({children}) => {
                     headers:{Authorization:`Bearer ${token}`},
                     // withCredentials:true,
                 });
-                if (res.status===200) {
+                if (res.status === 200) {
                     setIsAuthenticated(true)
                 }
             } catch (error) {
-                console.error('error',error);
+                console.error('Error verifying Token',error);
+                if (error?.response?.data) {
+                    console.error('Backend error message:', error.response.data);
+                }
                 navigate('/Login');
             }
         }

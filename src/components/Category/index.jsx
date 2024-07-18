@@ -16,8 +16,10 @@ const CategoryPage = () => {
     };
 
     const fetchSelectedCategories = async ()=>{
+      const token = localStorage.getItem('token');
       const res = await axios.get('http://localhost:5000/api/selectedCategories',{
         withCredentials: true,
+        headers: { Authorization: `Bearer ${token}` },
       });
       setSelectedCategories(res.data.selectedCategories);
     };
@@ -30,8 +32,9 @@ const CategoryPage = () => {
 
     setSelectedCategories(updatedSelection);
 
+    const token = localStorage.getItem('token');
     await axios.post(
-      'http://localhost:5000/api/updateSelectedCategories',{selectedCategories:updatedSelection},{withCredentials:true}
+      'http://localhost:5000/api/updateSelectedCategories',{selectedCategories:updatedSelection},{withCredentials:true, headers:{ Authorization: `Bearer ${token}` }}
     )
   }
     
