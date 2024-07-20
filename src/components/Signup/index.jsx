@@ -13,7 +13,7 @@ const Signup = () => {
 
     const sendRequest = async ()=>{
       try {
-        const res = await axios.post('http://localhost:5000/api/Signup',{
+        const res = await axios.post(`${import.meta.env.VITE_BACKEND_API}/api/Signup`,{
           name:name,email:email,password:password
         })
         console.log('data',res.data);
