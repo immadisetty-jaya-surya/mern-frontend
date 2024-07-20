@@ -12,7 +12,7 @@ const ProtectedRoute = ({children}) => {
             try {
                 const token = localStorage.getItem('token');
                 if(!token) throw new Error('no token found')
-                const res = await axios.get('http://localhost:5000/api/verifyToken',{
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/verifyToken`,{
                     headers:{Authorization:`Bearer ${token}`},
                     // withCredentials:true,
                 });

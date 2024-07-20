@@ -13,7 +13,7 @@ const Verification = ({email}) => {
 
     const sendRequest = async ()=>{
       try {
-        const res = await axios.post('http://localhost:5000/api/verifyOtp',{
+        const res = await axios.post(`${import.meta.env.VITE_BACKEND_API}/api/verifyOtp`,{
           email:email,otp:code
         })
         console.log(res.data);
